@@ -1,1 +1,2 @@
 # file-client-server-operations
+An express server to demonstrate working with files like png/jpg/pdf/* , sharing between client and server, streaming data versus pre-loading data , statically versus manually serving files, small files versus Bigger files, Reducing response time , Pipelining data into the response object , Dynamically populating response , Opening files in browser, Saving files as attachment, Performance Recording.
