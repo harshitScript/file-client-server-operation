@@ -1,0 +1,22 @@
+name: Deploy Main
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  lint_main:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout to code.
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Lint main
+        uses: github/super-linter@v4
+        env:
+          VALIDATE_ALL_CODEBASE: true
+          VALIDATE_JAVASCRIPT_ES: true
+          VALIDATE_HTML: true
