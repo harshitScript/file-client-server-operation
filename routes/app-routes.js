@@ -10,6 +10,7 @@ const getDownloadCustomPdfController = require("../controllers/getDownlaodCustom
 const {
   customPdfDataValidatorSchema,
 } = require("../validations/customPdfDataValidationSchema");
+const getStreamMovieController = require("../controllers/getStreamMovieController");
 const appRoutes = express.Router();
 
 appRoutes.post(
@@ -24,18 +25,20 @@ appRoutes.post(
   postUploadFileController
 );
 
-appRoutes.get("/get-small-pdf/:load_type", getSmallPdfController);
-
-appRoutes.get("/get-large-pdf/:load_type", getLargePdfController);
-
-appRoutes.get("/download-custom-pdf/:pdf_name", getDownloadCustomPdfController);
-
 appRoutes.post(
   "/generate-custom-pdf",
   json(),
   customPdfDataValidatorSchema,
   postGenerateCustomPdf
 );
+
+appRoutes.get("/get-small-pdf/:load_type", getSmallPdfController);
+
+appRoutes.get("/get-large-pdf/:load_type", getLargePdfController);
+
+appRoutes.get("/download-custom-pdf/:pdf_name", getDownloadCustomPdfController);
+
+appRoutes.get("/stream-movie/:movie_name", getStreamMovieController);
 
 appRoutes.get("/", getServerConfigController);
 
