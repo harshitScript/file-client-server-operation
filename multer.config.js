@@ -1,14 +1,25 @@
 const multer = require("multer");
 
-const diskStorage = multer.diskStorage({
+const imageDiskStorage = multer.diskStorage({
   destination: (req, file, cb) => {
-    return cb(null, "./public/user-files/");
+    return cb(null, "./public/user-images/");
   },
   filename: (req, file, cb) => {
     return cb(null, file.originalname);
   },
 });
 
-const customMulter = multer({ storage: diskStorage });
+const videoDiskStorage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    return cb(null, "./public/user-videos/");
+  },
+  filename: (req, file, cb) => {
+    return cb(null, file.originalname);
+  },
+});
 
-module.exports = customMulter;
+const imageMulter = multer({ storage: imageDiskStorage });
+
+const videoMulter = multer({ storage: videoDiskStorage });
+
+module.exports = { imageMulter, videoMulter };

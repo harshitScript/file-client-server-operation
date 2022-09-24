@@ -5,7 +5,7 @@ const rootDir = require("../utils/root-dir");
 const getLargePdfController = (req, res, next) => {
   const { load_type } = req.params;
 
-  const pdfPath = path.join(rootDir, "public", "user-pdf", "large_50MB.pdf");
+  const pdfPath = path.join(rootDir, "public", "test-pdf", "large_50MB.pdf");
 
   const preloadResponse = () => {
     fs.readFile(pdfPath, (err, data) => {
