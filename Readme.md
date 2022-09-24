@@ -1,6 +1,6 @@
 # file-client-server-operations
 
-##### read-write-stream stream-response static-serving pdf-generation res-pipelining
+##### read-write-stream, stream-response, static-serving, pdf-generation, res-pipelining
 
 ### An express server to demonstrate:
 
